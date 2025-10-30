@@ -74,7 +74,7 @@ predicted_ratings = np.dot(np.dot(U, sigma), Vt)
 # Example evaluation
 rmse = np.sqrt(mean_squared_error(actual_ratings, predicted_ratings))
 print("RMSE:", rmse)
-
+```
 Model Evaluation
 
 Metric Used:

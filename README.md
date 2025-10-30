@@ -75,6 +75,7 @@ predicted_ratings = np.dot(np.dot(U, sigma), Vt)
 rmse = np.sqrt(mean_squared_error(actual_ratings, predicted_ratings))
 print("RMSE:", rmse)
 ```
+
 ##Model Evaluation
 
 Metric Used:
@@ -88,6 +89,9 @@ RMSE: 0.87
 
 The lower the RMSE, the better the model performance.
 
+---
+
+
 ##Example Recommendation Output
 
 Top 5 Recommended Movies for User 25:
@@ -96,6 +100,9 @@ Top 5 Recommended Movies for User 25:
 3. Inception (2010)
 4. Interstellar (2014)
 5. The Matrix (1999)
+
+---
+
 
 ##Possible Extensions
 
@@ -106,6 +113,8 @@ Add content-based filtering using genres and movie metadata
 Combine SVD with neural networks for hybrid recommendation
 
 Use real-time recommendations with APIs
+
+---
 
 ##Prerequisites
 
@@ -123,6 +132,8 @@ scipy
 
 matplotlib
 
+---
+
 ##References
 
 MovieLens Datasets – Kaggle
@@ -130,6 +141,8 @@ MovieLens Datasets – Kaggle
 Scikit-learn Documentation
 
 SVD in Recommender Systems – Medium Article
+
+---
 
 ##About
 

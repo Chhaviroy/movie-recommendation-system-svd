@@ -75,3 +75,65 @@ predicted_ratings = np.dot(np.dot(U, sigma), Vt)
 rmse = np.sqrt(mean_squared_error(actual_ratings, predicted_ratings))
 print("RMSE:", rmse)
 
+Model Evaluation
+
+Metric Used:
+
+RMSE (Root Mean Squared Error) — measures how accurately the model predicts unseen ratings.
+
+Example output:
+
+RMSE: 0.87
+
+
+The lower the RMSE, the better the model performance.
+
+🎥 Example Recommendation Output
+Top 5 Recommended Movies for User 25:
+1. The Shawshank Redemption (1994)
+2. The Dark Knight (2008)
+3. Inception (2010)
+4. Interstellar (2014)
+5. The Matrix (1999)
+
+🚀 Possible Extensions
+
+Integrate with Flask or Streamlit to build a web app
+
+Add content-based filtering using genres and movie metadata
+
+Combine SVD with neural networks for hybrid recommendation
+
+Use real-time recommendations with APIs
+
+⚙️ Prerequisites
+
+Python 3.x
+
+Libraries:
+
+numpy
+
+pandas
+
+scikit-learn
+
+scipy
+
+matplotlib
+
+Install using:
+
+pip install -r requirements.txt
+
+📚 References
+
+MovieLens Datasets – Kaggle
+
+Scikit-learn Documentation
+
+SVD in Recommender Systems – Medium Article
+
+🧑‍💻 About
+
+Movie Recommendation System using SVD — a machine learning project to predict user ratings and provide intelligent movie recommendations based on collaborative filtering.

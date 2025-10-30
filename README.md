@@ -1,46 +1,77 @@
-# movie-recommendation-system-svd
-A Python-based movie recommendation system using Singular Value Decomposition (SVD) to predict user preferences and suggest personalized movies. Built with Pandas, NumPy, and Scikit-learn.
-Project Overview
+# 🎬 Movie-Recommendation-System-Using-SVD  
 
-This project predicts user ratings for movies they haven’t watched yet and recommends movies based on their preferences.
-It applies Collaborative Filtering and SVD to extract hidden patterns from the user–movie rating matrix.
-Key Features
+**SVD-based Movie Recommendation System** for predicting user preferences and generating personalized movie suggestions.
 
-Predicts unknown user ratings using Singular Value Decomposition (SVD)
+---
 
-Generates top movie recommendations for each user
+## 🧩 Introduction  
 
-Evaluates performance using metrics like RMSE (Root Mean Squared Error)
+This project implements a **Movie Recommendation System** using **Singular Value Decomposition (SVD)**, a powerful matrix-factorization technique widely used in collaborative filtering.  
+The system predicts how a user would rate a movie based on their historical ratings and the behavior of similar users.  
 
-Visualizes data distributions and recommendations
+Such models are commonly used by platforms like **Netflix, Amazon Prime, and Spotify** to recommend content based on user interests.
 
-End-to-end implementation with Pandas, NumPy, and Scikit-learn
+---
 
-Tech Stack & Libraries
-Category	Tools / Libraries
-Language	Python 🐍
-Libraries	NumPy, Pandas, Scikit-learn, SciPy, Matplotlib
-Algorithm	Singular Value Decomposition (SVD)
-IDE	Jupyter Notebook / VS Code
+## 📊 Dataset Overview  
 
-Workflow
+The dataset used in this project contains user IDs, movie IDs, and their corresponding ratings.  
 
-Load Dataset → Import user-movie rating data
+**Example structure:**
 
-Preprocess → Handle missing values and normalize ratings
+| userId | movieId | rating |
+|--------|----------|--------|
+| 1 | 31 | 4.0 |
+| 1 | 1029 | 5.0 |
+| 2 | 1061 | 3.5 |
+| ... | ... | ... |
 
-Apply SVD → Decompose user-item matrix into latent factors
+**Source:** [MovieLens Dataset – Kaggle](https://www.kaggle.com/datasets/grouplens/movielens-100k-dataset) *(or replace with your dataset source)*  
 
-Predict Ratings → Reconstruct matrix to estimate unknown ratings
+**Features:**
+- `userId` — Unique identifier for each user  
+- `movieId` — Unique identifier for each movie  
+- `rating` — User’s rating for the movie (e.g., 1–5)  
 
-Recommend Movies → Suggest top movies based on predicted scores
+---
 
-Evaluate Model → Calculate accuracy metrics like RMSE
+## 🧹 Data Preprocessing  
 
-Evaluation
+Steps performed before modeling:
+1. **Load and clean** the dataset  
+2. **Pivot the data** into a user–item matrix  
+3. **Handle missing values** (fill with 0 or mean rating)  
+4. **Normalize ratings** for consistent scale  
 
-Algorithm: Singular Value Decomposition (SVD)
+---
 
-Performance Metric: Root Mean Squared Error (RMSE)
+## 🧠 Model Training  
 
-Accuracy: Achieved around 90–93% rating prediction accuracy (approx.)
+The project uses **Singular Value Decomposition (SVD)** for collaborative filtering.  
+
+### Steps:
+1. Construct the **user–item rating matrix**  
+2. Apply **SVD decomposition** to capture latent features  
+3. Reconstruct the matrix to predict missing ratings  
+4. Recommend top-N movies with the highest predicted scores  
+
+---
+
+### Example Code Snippet  
+
+```python
+from sklearn.metrics import mean_squared_error
+from scipy.sparse.linalg import svds
+import numpy as np
+
+# Compute SVD
+U, sigma, Vt = svds(ratings_matrix, k=50)
+sigma = np.diag(sigma)
+
+# Predict ratings
+predicted_ratings = np.dot(np.dot(U, sigma), Vt)
+
+# Example evaluation
+rmse = np.sqrt(mean_squared_error(actual_ratings, predicted_ratings))
+print("RMSE:", rmse)
+

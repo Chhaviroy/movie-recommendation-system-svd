@@ -1,10 +1,10 @@
-# 🎬 Movie-Recommendation-System-Using-SVD  
+#  Movie-Recommendation-System-Using-SVD  
 
 **SVD-based Movie Recommendation System** for predicting user preferences and generating personalized movie suggestions.
 
 ---
 
-## 🧩 Introduction  
+## Introduction  
 
 This project implements a **Movie Recommendation System** using **Singular Value Decomposition (SVD)**, a powerful matrix-factorization technique widely used in collaborative filtering.  
 The system predicts how a user would rate a movie based on their historical ratings and the behavior of similar users.  
@@ -13,7 +13,7 @@ Such models are commonly used by platforms like **Netflix, Amazon Prime, and Spo
 
 ---
 
-## 📊 Dataset Overview  
+## Dataset Overview  
 
 The dataset used in this project contains user IDs, movie IDs, and their corresponding ratings.  
 
@@ -35,7 +35,7 @@ The dataset used in this project contains user IDs, movie IDs, and their corresp
 
 ---
 
-## 🧹 Data Preprocessing  
+## Data Preprocessing  
 
 Steps performed before modeling:
 1. **Load and clean** the dataset  
@@ -45,7 +45,7 @@ Steps performed before modeling:
 
 ---
 
-## 🧠 Model Training  
+##  Model Training  
 
 The project uses **Singular Value Decomposition (SVD)** for collaborative filtering.  
 
@@ -76,7 +76,7 @@ rmse = np.sqrt(mean_squared_error(actual_ratings, predicted_ratings))
 print("RMSE:", rmse)
 ```
 
-##Model Evaluation
+## Model Evaluation
 
 Metric Used:
 
@@ -92,7 +92,7 @@ The lower the RMSE, the better the model performance.
 ---
 
 
-##Example Recommendation Output
+## Example Recommendation Output
 
 Top 5 Recommended Movies for User 25:
 1. The Shawshank Redemption (1994)
@@ -104,7 +104,7 @@ Top 5 Recommended Movies for User 25:
 ---
 
 
-##Possible Extensions
+## Possible Extensions
 
 Integrate with Flask or Streamlit to build a web app
 
@@ -116,7 +116,7 @@ Use real-time recommendations with APIs
 
 ---
 
-##Prerequisites
+## Prerequisites
 
 Python 3.x
 
@@ -134,7 +134,7 @@ matplotlib
 
 ---
 
-##References
+## References
 
 MovieLens Datasets – Kaggle
 
@@ -144,6 +144,6 @@ SVD in Recommender Systems – Medium Article
 
 ---
 
-##About
+## About
 
 Movie Recommendation System using SVD — a machine learning project to predict user ratings and provide intelligent movie recommendations based on collaborative filtering.
